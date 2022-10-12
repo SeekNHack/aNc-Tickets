@@ -132,10 +132,8 @@ async def clear_logs(query: types.CallbackQuery):
 async def my_tickets(query: types.CallbackQuery):
     await query.message.delete()
     tickets = database.get_tickets_by_user(query.from_user.id)
+    print(tickets)
     keyboard_markup = types.InlineKeyboardMarkup(row_width=1)
-    keyboard_markup.add(
-        types.InlineKeyboardButton(STRINGS["BACK"],callback_data='start'),
-    )
     for ticket in tickets:
         data = ticket["date"]
         role = ticket["role"]

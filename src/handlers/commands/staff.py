@@ -72,7 +72,7 @@ async def staff_list(query: types.CallbackQuery,state: FSMContext):
             types.InlineKeyboardButton(STRINGS["STAFF_MEMBER"].format(username,database.get_role(user)),callback_data='detail_staff_{}'.format(user)),
         )
     keyboard_markup.add(
-            types.InlineKeyboardButton(STRINGS["BACK"],callback_data='start'),
+            types.InlineKeyboardButton(STRINGS["BACK"],callback_data='staff_list'),
     )
     await bot.send_message(query.message.chat.id,STRINGS["DETAIL_STAFF"],reply_markup=keyboard_markup)
     
