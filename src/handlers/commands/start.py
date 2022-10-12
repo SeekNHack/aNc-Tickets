@@ -12,7 +12,7 @@ async def start_user(chat_id,username):
     keyboard_markup = types.InlineKeyboardMarkup(row_width=1)
     keyboard_markup.add(
         types.InlineKeyboardButton(STRINGS["TICKET"],callback_data='create_ticket'),
-        types.InlineKeyboardButton(STRINGS["MY_TICKET"],callback_data='my_ticket'),
+        types.InlineKeyboardButton(STRINGS["MY_TICKETS"],callback_data='my_ticket'),
     )
     await bot.send_message(chat_id,res,parse_mode="html",reply_markup=keyboard_markup)
     
